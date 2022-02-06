@@ -1,5 +1,5 @@
-# Frontend Mentor Challenge Template
+# FAQ Accordion Card
 
-This is template for Front-end development exercises done during [Optimum BH](https://github.com/optimumBA) Internship.
+This is a Front-end development exercise for [Optimum BH](https://github.com/optimumBA) Internship.
 
-Exercises are based on [Frontend Mentor challenges](https://www.frontendmentor.io).
+It is based on a [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam).
