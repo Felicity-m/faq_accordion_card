@@ -1,7 +1,14 @@
 module.exports = {
   content: ['public/*.html'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: "'Kumbh Sans', serif ",
+      },
+    },
   },
   plugins: [],
+  variants: {
+    color: ['active'],
+  },
 }
