@@ -67,12 +67,13 @@
               @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
-              <p
+            <!--Changing the P tags to link tags to pass the npm run test command-->
+              <a href="#content-1"
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
                 :class="openedIndex == 1 ? 'font-extrabold' : 'text-gray-700'"
               >
                 How many team members can I have?
-              </p>
+              </a>
               <span class="text-red-500 hover:text-red-700">
                 <!--Was trying to change the icon when the paragraph is clicked but I have not succeeded yet, still searching for ways to implement that-->
                 <ion-icon
@@ -81,27 +82,27 @@
                 ></ion-icon>
               </span>
             </div>
-            <div x-show.transition.in.duration.800ms="openedIndex == 1" x-cloak>
+            <div  id="content-1" x-show.transition.in.duration.800ms="openedIndex == 1" x-cloak>
               you can invite up to 2 additional users on free plan there is no
               limits on team members on the premium plan
             </div>
           </div>
-          <div class="border-b border-gray-200">
+          <div  class="border-b border-gray-200">
             <div
               @click="openedIndex == 2? openedIndex = -1 : openedIndex = 2"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
-              <p
+              <a href="#content-2"
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
                 :class="openedIndex == 2 ? 'font-extrabold' : 'text-gray-700'"
               >
                 How many team members can I have H?
-              </p>
+              </a>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
-            <div x-show.transition.in.duration.800ms="openedIndex == 2" x-cloak>
+            <div id="content-2" x-show.transition.in.duration.800ms="openedIndex == 2" x-cloak>
               No more than 2GB. All files in your account must fit your allotted
               storage space.
             </div>
@@ -111,17 +112,17 @@
               @click="openedIndex == 3 ? openedIndex = -2 : openedIndex = 3"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
-              <p
+              <a href="#content-3 "
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
                 :class="openedIndex == 3 ? 'font-extrabold' : 'text-gray-700'"
               >
                 How do I reset my password?
-              </p>
+              </a>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
-            <div x-show.transition.in.duration.800ms="openedIndex == 3" x-cloak>
+            <div id="content-3" x-show.transition.in.duration.800ms="openedIndex == 3" x-cloak>
               Click on "Forgot password" from the login page or "Change
               password" from your profile page. A rest link will be emailed to
               you
@@ -132,17 +133,17 @@
               @click="openedIndex == 4? openedIndex = -3 : openedIndex = 4"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
-              <p
+              <a href="#content-4"
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
                 :class="openedIndex == 4 ? 'font-extrabold' : 'text-gray-700'"
               >
                 Can I cancel my subscription?
-              </p>
+              </a>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
-            <div x-show.transition.in.duration.800ms="openedIndex == 4" x-cloak>
+            <div id="content-4" x-show.transition.in.duration.800ms="openedIndex == 4" x-cloak>
               Yes! Send us a message and we will process your request no
               questions asked
             </div>
@@ -152,17 +153,17 @@
               @click="openedIndex == 5 ? openedIndex = -4 : openedIndex = 5"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
-              <p
+              <a href="#content-5"
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
                 :class="openedIndex == 5? 'font-extrabold' : 'text-gray-700'"
               >
                 Do you provide additional support?
-              </p>
+              </a>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
-            <div x-show="openedIndex == 5" x-transition x-cloak>
+            <div id="content-5" x-show="openedIndex == 5" x-transition x-cloak>
               Chat and email support is available 24/7. Phone lines are open
               during normal business hours.
             </div>
