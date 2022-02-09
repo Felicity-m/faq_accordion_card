@@ -33,131 +33,138 @@
   <body
     class="relative flex h-screen items-center justify-center bg-violet-500 font-custom text-gray-700"
   >
-    <div class="absolute left-0 md:top-80  sm:top-12 sm:h-28 sm:w-28 sm:translate-x-40 z-50 h-20 w-20 md:translate-x-20 transform">
+    <div
+      class="absolute left-0 z-50 h-20 w-20 transform sm:top-12 sm:h-28 sm:w-28 sm:translate-x-40 md:top-80 md:translate-x-20"
+    >
       <img src="images/illustration-box-desktop.svg" alt="illustration-box" />
     </div>
     <main
-      class="grid h-auto w-4/5 md:overflow-hidden rounded-3xl bg-white pt-12 pb-12 lg:grid-cols-2 shadow-md"
+      class="grid h-auto w-4/5 rounded-3xl bg-white pt-12 pb-12 shadow-md md:overflow-hidden lg:grid-cols-2"
     >
       <div
         class="left_side col-span-1 flex items-center justify-center sm:bg-[url('images/bg-pattern-mobile.svg')] sm:bg-contain sm:bg-top sm:bg-no-repeat md:bg-[url('images/bg-pattern-desktop.svg')] md:bg-auto md:bg-right"
       >
-        
         <div>
           <img
-            class="transform md:-translate-x-24 md:translate-y-0 sm:-translate-y-44"
+            class="transform sm:-translate-y-44 md:-translate-x-24 md:translate-y-0"
             src="images/illustration-woman-online-desktop.svg"
             alt="woman"
           />
         </div>
       </div>
-      <div x-data="{ openedIndex: 1 }" class="right_side col-span-1 pt-8 pr-10 pb-10 pl-12">
+      <div
+        x-data="{ openedIndex: 1 }"
+        class="right_side col-span-1 pt-8 pr-10 pb-10 pl-12"
+      >
         <div>
           <h1
-            class="text-x mb-8 font-extrabold sm:-mt-10 uppercase tracking-wide sm:text-center md:text-left"
+            class="text-x mb-8 font-extrabold uppercase tracking-wide sm:-mt-10 sm:text-center md:text-left"
           >
             faq
           </h1>
           <div class="border-b border-gray-200">
             <div
-            @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1" 
+              @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
               <p
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 1 ? 'font-extrabold' : 'text-gray-700'" 
+                :class="openedIndex == 1 ? 'font-extrabold' : 'text-gray-700'"
               >
                 How many team members can I have?
               </p>
               <span class="text-red-500 hover:text-red-700">
                 <!--Was trying to change the icon when the paragraph is clicked but I have not succeeded yet, still searching for ways to implement that-->
-                <ion-icon name="chevron-down-outline"
-                :class="openedIndex == 2 ? 'chevron-up-outline' : 'chevron-down-outline" ></ion-icon>
+                <ion-icon
+                  name="chevron-down-outline"
+                  :class="openedIndex == 2 ? 'chevron-up-outline' : 'chevron-down-outline"
+                ></ion-icon>
               </span>
             </div>
             <div x-show.transition.in.duration.800ms="openedIndex == 1" x-cloak>
-              you can invite up to 2 additional users on free plan there is
-             no limits on team members on the premium plan
+              you can invite up to 2 additional users on free plan there is no
+              limits on team members on the premium plan
             </div>
           </div>
           <div class="border-b border-gray-200">
             <div
-            @click="openedIndex == 2? openedIndex = -1 : openedIndex = 2"
+              @click="openedIndex == 2? openedIndex = -1 : openedIndex = 2"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
               <p
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 2 ? 'font-extrabold' : 'text-gray-700'" 
+                :class="openedIndex == 2 ? 'font-extrabold' : 'text-gray-700'"
               >
-              How many team members can I have H?
+                How many team members can I have H?
               </p>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
             <div x-show.transition.in.duration.800ms="openedIndex == 2" x-cloak>
-              No more than 2GB. All files in your account must fit your allotted storage space. 
-             
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
             </div>
           </div>
-          <div  class="border-b border-gray-200">
+          <div class="border-b border-gray-200">
             <div
-            @click="openedIndex == 3 ? openedIndex = -2 : openedIndex = 3"
+              @click="openedIndex == 3 ? openedIndex = -2 : openedIndex = 3"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
               <p
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 3 ? 'font-extrabold' : 'text-gray-700'" 
+                :class="openedIndex == 3 ? 'font-extrabold' : 'text-gray-700'"
               >
-                How do I reset my password? 
+                How do I reset my password?
               </p>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
             <div x-show.transition.in.duration.800ms="openedIndex == 3" x-cloak>
-              Click on "Forgot password" from the login page or "Change password" from your profile page. A rest link will be emailed to you
-
+              Click on "Forgot password" from the login page or "Change
+              password" from your profile page. A rest link will be emailed to
+              you
             </div>
           </div>
           <div class="border-b border-gray-200">
             <div
-            @click="openedIndex == 4? openedIndex = -3 : openedIndex = 4"
+              @click="openedIndex == 4? openedIndex = -3 : openedIndex = 4"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
               <p
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 4 ? 'font-extrabold' : 'text-gray-700'" 
+                :class="openedIndex == 4 ? 'font-extrabold' : 'text-gray-700'"
               >
-               Can I cancel my subscription? 
+                Can I cancel my subscription?
               </p>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
             <div x-show.transition.in.duration.800ms="openedIndex == 4" x-cloak>
-              Yes! Send us a message and we will process your request no questions asked
-              
+              Yes! Send us a message and we will process your request no
+              questions asked
             </div>
           </div>
           <div class="border-b border-gray-200">
             <div
-            @click="openedIndex == 5 ? openedIndex = -4 : openedIndex = 5"
+              @click="openedIndex == 5 ? openedIndex = -4 : openedIndex = 5"
               class="flex cursor-pointer justify-between pt-2 pb-2"
             >
               <p
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 5? 'font-extrabold' : 'text-gray-700'" 
+                :class="openedIndex == 5? 'font-extrabold' : 'text-gray-700'"
               >
-                Do you provide additional support? 
+                Do you provide additional support?
               </p>
               <span class="text-red-500">
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
             <div x-show="openedIndex == 5" x-transition x-cloak>
-             Chat and email support is available 24/7. Phone lines are open during normal business hours.
-              
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
             </div>
           </div>
         </div>
