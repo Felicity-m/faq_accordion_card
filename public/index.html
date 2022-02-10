@@ -56,34 +56,58 @@
         x-data="{ openedIndex: 1 }"
         class="right_side col-span-1 pt-8 pr-10 pb-10 pl-12"
       >
-        <div>
-          <h1
-            class="text-x mb-8 font-extrabold uppercase tracking-wide sm:-mt-10 sm:text-center md:text-left"
-          >
-            faq
-          </h1>
-          <div class="border-b border-gray-200">
+        <h1
+          class="text-x mb-8 font-extrabold uppercase tracking-wide sm:-mt-10 sm:text-center md:text-left"
+        >
+          faq
+        </h1>
+        <div
+          x-data=" { titles: [
+            { id: 1, label: 'How many team members can I invite?' },
+            { id: 2, label: 'What is the maximum file upload size?' },
+            { id: 3, label: 'How do I reset my password?' },
+            {  id: 4, label: 'Can I cancel my subscription?' },
+            { id: 5, label: 'Do you provide additional support?'}
+        ]}"
+          x-data=" { contents: [
+          { id: 1, text: 
+            ' You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.' },
+          { id: 2, text: 
+            'No more than 2GB. All files in your account must fit your allotted
+            storage space. ' },
+          { id: 3, text: 
+            '  Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.' },
+          {  id: 4, text: 
+            '   Yes! Send us a message and we’ll process your request no questions
+            asked.' },
+          { id: 5, text: 
+            'Chat and email support is available 24/7. Phone lines are open
+            during normal business hours. '}
+      ]}"
+        >
+          <template x-for="title in titles" :key="title.id">
             <div
-              @click="openedIndex == 1 ? openedIndex = -1 : openedIndex = 1"
-              class="flex cursor-pointer justify-between pt-2 pb-2"
+              class="flex cursor-pointer justify-between border-b border-gray-200 pt-2 pb-2"
             >
               <!--Changing the P tags to link tags to pass the npm run test command-->
               <a
+                x-text="title.label"
                 href="#content-1"
                 class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 1 ? 'font-extrabold' : 'text-gray-700'"
               >
-                How many team members can I invite?
               </a>
               <span class="text-red-500 hover:text-red-700">
                 <!--Was trying to change the icon when the paragraph is clicked but I have not succeeded yet, still searching for ways to implement that-->
-                <ion-icon
-                  name="chevron-down-outline"
-                  :class="openedIndex == 2 ? 'chevron-up-outline' : 'chevron-down-outline"
-                ></ion-icon>
+                <ion-icon name="chevron-down-outline"></ion-icon>
               </span>
             </div>
+          </template>
+
+          <template x-for="content in contents" :key="content.id">
             <div
+              x-text="content.title"
               id="content-1"
               x-show.transition.in.duration.800ms="openedIndex == 1"
               x-cloak
@@ -91,103 +115,7 @@
               You can invite up to 2 additional users on the Free plan. There is
               no limit on team members for the Premium plan.
             </div>
-          </div>
-          <div class="border-b border-gray-200">
-            <div
-              @click="openedIndex == 2? openedIndex = -1 : openedIndex = 2"
-              class="flex cursor-pointer justify-between pt-2 pb-2"
-            >
-              <a
-                href="#content-2"
-                class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 2 ? 'font-extrabold' : 'text-gray-700'"
-              >
-                What is the maximum file upload size?
-              </a>
-              <span class="text-red-500">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-              </span>
-            </div>
-            <div
-              id="content-2"
-              x-show.transition.in.duration.800ms="openedIndex == 2"
-              x-cloak
-            >
-              No more than 2GB. All files in your account must fit your allotted
-              storage space.
-            </div>
-          </div>
-          <div class="border-b border-gray-200">
-            <div
-              @click="openedIndex == 3 ? openedIndex = -2 : openedIndex = 3"
-              class="flex cursor-pointer justify-between pt-2 pb-2"
-            >
-              <a
-                href="#content-3 "
-                class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 3 ? 'font-extrabold' : 'text-gray-700'"
-              >
-                How do I reset my password?
-              </a>
-              <span class="text-red-500">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-              </span>
-            </div>
-            <div
-              id="content-3"
-              x-show.transition.in.duration.800ms="openedIndex == 3"
-              x-cloak
-            >
-              Click “Forgot password” from the login page or “Change password”
-              from your profile page. A reset link will be emailed to you.
-            </div>
-          </div>
-          <div class="border-b border-gray-200">
-            <div
-              @click="openedIndex == 4? openedIndex = -3 : openedIndex = 4"
-              class="flex cursor-pointer justify-between pt-2 pb-2"
-            >
-              <a
-                href="#content-4"
-                class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 4 ? 'font-extrabold' : 'text-gray-700'"
-              >
-                Can I cancel my subscription?
-              </a>
-              <span class="text-red-500">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-              </span>
-            </div>
-            <div
-              id="content-4"
-              x-show.transition.in.duration.800ms="openedIndex == 4"
-              x-cloak
-            >
-              Yes! Send us a message and we’ll process your request no questions
-              asked.
-            </div>
-          </div>
-          <div class="border-b border-gray-200">
-            <div
-              @click="openedIndex == 5 ? openedIndex = -4 : openedIndex = 5"
-              class="flex cursor-pointer justify-between pt-2 pb-2"
-            >
-              <a
-                href="#content-5"
-                class="title_1 transition duration-300 ease-out hover:text-red-600"
-                :class="openedIndex == 5? 'font-extrabold' : 'text-gray-700'"
-              >
-                Do you provide additional support?
-              </a>
-              <span class="text-red-500">
-                <ion-icon name="chevron-down-outline"></ion-icon>
-              </span>
-            </div>
-            <div id="content-5" x-show="openedIndex == 5" x-transition x-cloak>
-              Chat and email support is available 24/7. Phone lines are open
-              during normal business hours.
-            </div>
-          </div>
+          </template>
         </div>
       </div>
     </main>
